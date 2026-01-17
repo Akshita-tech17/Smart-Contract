@@ -82,6 +82,19 @@ State transitions:
 - **Explorer Link:** [View on Solana Explorer](https://explorer.solana.com/address/4118MKuzhYvbNYmQjA9rkqveT5V2ksyo1tNRH3zrqXpo?cluster=devnet)
 
 ---
+## Core Logic
+**initialize_escrow**: Validates the buyer's account, creates the escrow PDA (Program Derived Address), and transfers the specified amount into the contract's vault.
+**cancel_escrow**: (If implemented) Allows the buyer to reclaim their funds before the seller has claimed them, provided the security checks pass.
+**complete_escrow**: Finalizes the trade by transferring the held funds to the seller's wallet.
+
+🛠 Technical Specifications
+**Account Structures**
+The program utilizes a custom EscrowAccount to store the state of each escrow transaction.
+**Field Type Description**
+**buyer Pubkey** The public key of the user who initialized the escrow and deposited funds.
+**seller Pubkey** The intended recipient of the funds once conditions are met.
+**amount u64** The total amount of Lamports held in the escrow.
+**is_initialized bool** A flag to prevent re-initialization of the same account.
 
 ## 📂 Repository Structure
 
@@ -92,6 +105,8 @@ State transitions:
 : Client-side scripts for interacting with the deployed program.
 * **`client/`**<img width="1920" height="1020" alt="Deployment Success" src="https://github.com/user-attachments/assets/58e3fb36-57db-4d13-a540-3068237031e6" />
 <img width="1920" height="1080" alt="Deployment Success" src="https://github.com/user-attachments/assets/a0a18d48-7aac-445b-a892-97e2f1c9044d" />
+
+License : MIT
 
 
 📝 Simple Escrow Explained
