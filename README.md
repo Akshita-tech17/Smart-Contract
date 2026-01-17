@@ -121,6 +121,9 @@ License : MIT
 - Deployment: On Ethereum you’d share a contract address; on Solana you’d share a program ID. Both act as the “location” of your escrow logic.
 - Real-world use case: Helps freelancers, online sellers, or P2P traders exchange value without needing a trusted third party.
 
+## RUN TEST
+
+<img width="1920" height="1080" alt="RUN TEST SUCCESSFUL" src="https://github.com/user-attachments/assets/a5cc1773-d6f7-4503-a305-85ece5183375" />
 
 
 
