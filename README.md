@@ -89,6 +89,23 @@ State transitions:
     * **`lib.rs`**: The main entry point for the smart contract logic (Simple Escrow).
 * **`tests/`**: Contains the test suite for the program.
     * **`anchor.test.ts`**: TypeScript tests to verify the escrow functionality.
-* **`client/`**: Client-side scripts for interacting with the deployed program.
+: Client-side scripts for interacting with the deployed program.
+* **`client/`**<img width="1920" height="1020" alt="Deployment Success" src="https://github.com/user-attachments/assets/58e3fb36-57db-4d13-a540-3068237031e6" />
+<img width="1920" height="1080" alt="Deployment Success" src="https://github.com/user-attachments/assets/a0a18d48-7aac-445b-a892-97e2f1c9044d" />
+
+
+📝 Simple Escrow Explained
+- Escrow basics: It’s a middle layer that holds money until certain conditions are met, so neither side can cheat.
+- Buyer role: The buyer deposits funds into the contract — this “locks” the money safely on-chain.
+
+- Seller role: The seller can only withdraw funds once the buyer signals approval or a condition (like delivery confirmation) is satisfied.
+- Cancel option: If the seller hasn’t claimed yet, the buyer can cancel and get their money back.
+- State machine: The contract moves through states — Initialized (funds locked), then either Released (seller paid) or Canceled (buyer refunded).
+- Access control: Functions check who is calling — only the buyer can cancel/release, only the seller can claim.
+- Security checks: Prevent double spending by updating state before transferring funds, and restrict actions to valid states.
+- Deployment: On Ethereum you’d share a contract address; on Solana you’d share a program ID. Both act as the “location” of your escrow logic.
+- Real-world use case: Helps freelancers, online sellers, or P2P traders exchange value without needing a trusted third party.
+
+
 
 
